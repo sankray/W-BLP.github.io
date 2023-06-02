@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pending Statements</title>
+</head>
+<body>
+    
+    <h1>Pending</h1>
+    
+    
+    <% if (Array.isArray(response)) { %>
+        <% response.forEach(item=> { %>
+            <table border="">
+                <thead>
+                    <tr>
+                        <th width="300">Comparative Statement Number</th>
+                        <th width="300">Department</th>
+                        <th width="300">Comparative Statment for</th>
+                        <th width="300">Date</th>
+                        <th width="300">Particulars</th>
+                        <th width="300">Particulars 1</th>
+                        <th width="300">Particulars 2</th>
+                        <th width="300">Particulars 3</th>
+                        <th width="300">Quantity to be supplied</th>
+                        <th width="300">quantity 1</th>
+                        <th width="300">quantity 2</th>
+                        <th width="300">quantity 3</th>
+                        <th width="300">Vendor 1</th>
+                        <th width="300">price 1</th>
+                        <th width="300">price 2</th>
+                        <th width="300">price 3</th>
+                        <th width="300">price 4</th>
+                        <th width="300">Vendor 2</th>
+                        <th width="300">price 1</th>
+                        <th width="300">price 2</th>
+                        <th width="300">price 3</th>
+                        <th width="300">price 4</th>
+                        <th width="300">Vendor 3</th>
+                        <th width="300">price 1</th>
+                        <th width="300">price 2</th>
+                        <th width="300">price 3</th>
+                        <th width="300">price 4</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr align="center">
+                        <td>
+                            <%= item.id %>
+                        </td>
+                        <td>
+                            <%= item.department %>
+                        </td>
+                        <td>
+                            <%= item.for %>
+                        </td>
+                        <td>
+                            <%= item.date %>
+                        </td>
+                        <td>
+                            <%= item.particulars %>
+                        </td>
+                        <td>
+                            <%= item.particulars1 %>
+                        </td>
+                        <td>
+                            <%= item.particulars2 %>  
+                        </td>
+                        <td>
+                            <%= item.particulars3 %>
+                        </td>
+                        <td>
+                            <%= item.quantity %>
+                        </td>
+                        <td>
+                            <%= item.quantity1 %>
+                        </td>
+                        <td>
+                            <%= item.quantity2 %>
+                        </td>
+                        <td>
+                            <%= item.quantity3 %>
+                        </td>
+                        <td>
+                            <%= item.vendor %>
+                        </td>
+                        <td>
+                            <%= item.price %>
+                        </td>
+                        <td>
+                            <%= item.price1 %>
+                        </td>
+                        <td>
+                            <%= item.price2 %>
+                        </td>
+                        <td>
+                            <%= item.price3 %>
+                        </td>
+                        <td>
+                            <%= item.vendor1 %>
+                        </td>
+                        <td>
+                            <%= item.prices %>
+                        </td>
+                        <td>
+                            <%= item.prices1 %>
+                        </td>
+                        <td>
+                            <%= item.prices2 %>
+                        </td>
+                        <td>
+                            <%= item.prices3 %>
+                        </td>
+                        <td>
+                            <%= item.pricess %>
+                        </td>
+                        <td>
+                            <%= item.pricess1 %>
+                        </td>
+                        <td>
+                            <%= item.pricess2 %>
+                        </td>
+                        <td>
+                            <%= item.pricess3 %>
+                        </td>
+                    </tr>
+                </tbody><br>
+                <% }) %>
+                <% }else{ %>
+                    <p>There are no Pending Slips!!!</p>
+               <% } %>
+</body>
+</html>
+

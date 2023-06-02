@@ -1,0 +1,94 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/pinkslip.css">
+    <title>Pink Slip</title>
+</head>
+
+<header>
+    <h1>Pink Slip</h1>
+    <h4>Web-based ledegering portal</h4>
+</header>
+
+<body>
+
+    <nav>
+        <a href="/pinkslip">Pink Slip</a>
+        <a href="/get-all-pending-slips">Pending Slips</a>
+        <a href="/accept-slip-request">Take action</a>
+    </nav>
+
+    <br>
+    <div class="container">
+        <!-- <h2 class="main_heading">Pink Slip</h2> -->
+        <!-- <hr> -->
+        <br>
+        <div class="row">
+            <div class="col-md-3">
+
+            </div>
+            <div>
+                <form action="/pinkslip" method="POST">
+
+                    <label for="department">Department:</label>
+                    <div class="form">
+                        <input type="text" class="department" id="department" name="department"
+                            placeholder="Name of the Department">
+                    </div>
+                    <br>
+                    <label for="date">Date</label>
+                    <div class="form">
+                        <input type="date" name="date" id="date">
+                    </div>
+                    <br>
+                    <label for="submitted_by">Submitted by:</label>
+                    <div class="form">
+                        <input type="text" class="submitted_by" id="submitted_by" name="submitted_by" placeholder="Name">
+                    </div>
+                    <br>
+                    <label for="details">Activity Details:</label>
+                    <div class="form">
+                        <input type="text" class="details" id="details" name="activity_details" placeholder="Activity Details">
+                    </div>
+                    <br>
+                    <label for="description">Description:</label>
+                    <div class="form">
+                        <textarea name="description" cols="90" rows="10"
+                            placeholder="Description about product"></textarea>
+                    </div>
+                    <br>
+                    <label for="email">Notify on:</label>
+                    <div class="form">
+                        <input placeholder="Email" id="email" type="email" name="email" class="form-control"
+                            aria-describedby="emailHelp">
+                    </div>
+                    <br>
+                    <!-- <label for="requested_to">Requested to:</label>
+                    <div class="form">
+                        <input placeholder="User" id="requested_to" type="text" name="requested_to" class="requested_to">
+                    </div> -->
+
+                    <label for="requested_to">Requested to:</label>
+                    <div class="form">
+                        <select name="requested_to" id="requested_to" class="requested_to">
+                        <option value="hod@q">H.O.D</option>
+                        <option value="registrar@q">Registrar</option>
+                    </select>
+                    </div>
+                    
+                    <br>
+                    <input type="submit" value="Submit">
+                </form>
+
+                
+
+            </div>
+        </div>
+
+</body>
+
+</html>
+

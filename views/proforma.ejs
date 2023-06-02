@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="/pinkslip.css"> -->
+    <title>Proforma</title>
+</head>
+
+<body>
+
+    <nav>
+        <a href="/proforma">Proforma</a>||
+        <a href="/get-all-pending-proforma">Pending Proforma</a>||
+        <a href="/accept-proforma-request">Take action</a>
+    </nav>
+
+    <br>
+    <div class="container">
+        <h2 class="main_heading">Proforma</h2>
+        <hr>
+        <br>
+        <div class="row">
+            <div class="col-md-3">
+
+
+                <form action="/proforma" method="POST">
+
+                    <label for="name">Submitted by:</label>
+                    <div class="form">
+                        <input type="name" class="name" id="name" name="name" placeholder="">
+                    </div>
+                    <br>                    
+
+                    <label for="equipment">Particular of Equipment:</label>
+                    <div class="form">
+                        <input type="text" class="equipment" id="equipment" name="equipment" placeholder="">
+                    </div>
+                    <br>
+                    <label for="specification">Specification:</label>
+                    <div class="form">
+                        <textarea name="specification" id="specification" cols="30" rows="10"></textarea>
+                    </div>
+                    <br>
+
+                    <h3>Vendors</h3>
+                    <div class="form">
+                        <input type="text" class="vendor_name" placeholder="enter name" name="vendor_name">
+                        <input type="text" class="vendor_address" placeholder="enter address" name="vendor_address">
+                    </div>
+                    <br>
+                    <div class="form">
+                        <input type="text" class="vendor_name1" placeholder="enter name" name="vendor_name1">
+                        <input type="text" class="vendor_address1" placeholder="enter address" name="vendor_address1">
+                    </div>
+                    <br>
+                    <div class="form">
+                        <input type="text" class="vendor_name2" placeholder="enter name" name="vendor_name2">
+                        <input type="text" class="vendor_address2" placeholder="enter address" name="vendor_address2">
+                    </div>
+                    <div class="inp-group">
+                        <div class="vendor-input">
+                            <br>
+                        </div>
+                    </div>
+                    <button id="add" class="add" value="Add" type="button" onclick="addInput()">Add Vendors</button>
+
+
+                    <br>
+                    <br>
+                    <label for="cost">Approximate Cost:</label>
+                    <div class="form">
+                        <input type="text" class="cost" id="cost" name="cost">
+                    </div>
+                    <br>
+                    <label for="justification">Justification for Purchase:</label>
+                    <div class="form">
+                        <input type="text" class="justification" id="justification" name="justification">
+                    </div>
+                    <br>
+
+                    <h3>Departmental Committee Members:</h3>
+                    <div class="form">
+                        <input type="text" class="member_name" placeholder="enter name" name="member_name">
+                    </div>
+                    <br>
+                    <div class="form">
+                        <input type="text" class="member_name1" placeholder="enter name" name="member_name1">
+                    </div>
+                    <br>
+                    <div class="form">
+                        <input type="text" class="member_name2" placeholder="enter name" name="member_name2">
+                    </div>
+                    
+                    <div class="inp-groups">
+                        <div class="member-input">
+                            <br>
+                        </div>
+                    </div>
+                    <button id="add" class="add" value="Add" type="button" onclick="addInputs()">Add
+                        Members</button>
+                    <br>
+                    <br>
+                    <label for="meeting">Meeting was held on:</label>
+                    <div class="form">
+                        <input type="datetime-local" class="meeting" id="meeting" name="meeting">
+                    </div>
+
+                    <label for="submitted_to">Submitted for Approval:</label>
+                    <div class="form">
+                        <select name="submitted_to" id="submitted_to" class="submitted_to">
+                        <option value="hod@q">H.O.D</option>
+                        <option value="registrar@q">Registrar</option>
+                    </select>
+                    </div>
+                    <br>
+                    <label for="registrar">Finance Provision:</label>
+                    <div class="form">
+                        <input type="text" name="registrar" id="registrar" class="registrar">
+                    </div>
+                    <br>
+                    <label for="principal">Submitted for Approval:</label>
+                    <div class="form">
+                        <input type="text" name="principal" id="principal" class="principal">
+                    </div>
+                    <label for="email">Notify on:</label>
+                    <div class="form">
+                        <input placeholder="Email" id="email" type="email" name="email" class="form-control"
+                            aria-describedby="emailHelp">
+                    </div>
+                    <br>
+                    <input type="submit" value="Submit">
+            </div>
+            <div>
+
+
+                </form>
+                <script>
+                    const input = document.querySelector(".inp-group");
+
+                    function removeInput() {
+                        this.parentElement.remove();
+                    }
+
+                    function addInput() {
+                        const input = document.querySelector(".inp-group");
+                        const container = document.createElement("div");
+                        container.className = "vendor-input";
+
+                        const nameContainer = document.createElement("div");
+                        nameContainer.className = "form";
+
+                        const name = document.createElement("input");
+                        name.type = "text";
+                        name.className = "vendor-name";
+                        name.placeholder = "enter name";
+                        name.name = "vendor-name";
+
+                        const addressContainer = document.createElement("div");
+                        addressContainer.className = "form";
+
+                        const address = document.createElement("input");
+                        address.type = "text";
+                        address.className = "vendor-address";
+                        address.placeholder = "enter address";
+                        address.name = "vendor-address";
+                        address.style.width = "100%";
+
+                        const btn = document.createElement("a");
+                        btn.className = "delete";
+                        btn.innerHTML = "&times;";
+                        btn.addEventListener("click", removeInput);
+
+                        nameContainer.appendChild(name);
+                        addressContainer.appendChild(address);
+                        container.appendChild(nameContainer);
+                        container.appendChild(addressContainer);
+                        container.appendChild(btn);
+                        input.appendChild(container);
+                    }
+                </script>
+                <script>
+                    function addInputs() {
+                        const inputGroup = document.querySelector(".inp-groups");
+                        const memberInput = document.createElement("div");
+                        memberInput.className = "member-input";
+
+                        const nameContainer = document.createElement("div");
+                        nameContainer.className = "form";
+
+                        const name = document.createElement("input");
+                        name.type = "text";
+                        name.className = "member-name";
+                        name.placeholder = "enter name";
+                        name.name = "member-name";
+
+                        const btn = document.createElement("a");
+                        btn.className = "delete";
+                        btn.innerHTML = "&times;";
+                        btn.addEventListener("click", function () {
+                            memberInput.remove();
+                        });
+
+                        nameContainer.appendChild(name);
+                        memberInput.appendChild(nameContainer);
+                        memberInput.appendChild(btn);
+                        inputGroup.appendChild(memberInput);
+                    }
+
+                </script>
+
+</body>
+
+</html>
+
+
+<!-- <style>
+    /* Style for the form */
+form {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+
+/* Style for the form label */
+label {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Style for the input fields */
+input[type="text"],
+textarea,
+input[type="datetime-local"],
+input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+/* Style for the email input field */
+input[type="email"] {
+  margin-bottom: 40px;
+}
+
+/* Style for the submit button */
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Style for the submit button on hover */
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.vendor-input {
+  margin-bottom: 10px;
+}
+
+.vendor-name,
+.vendor-address {
+  display: block;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.delete {
+  font-size: 20px;
+  font-weight: bold;
+  color: red;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+/* Style for the add button */
+.add {
+  background-color: #008CBA;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Style for the add button on hover */
+.add:hover {
+  background-color: #007a9b;
+}
+
+/* Style for the delete button */
+.delete {
+  color: red;
+  cursor: pointer;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+/* Style for the main heading */
+.main_heading {
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+/* Style for the horizontal line */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 40px;
+}
+
+</style> -->
+
+<style>
+    body {
+        background-color: #f9ffce;
+    }
+
+    .container {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .main_heading {
+        color: #333;
+        text-align: center;
+    }
+
+    .form label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+        color: #555;
+    }
+
+    .form input[type="text"],
+    .form textarea,
+    .form input[type="email"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        font-size: 16px;
+        color: #333;
+        /* margin-bottom: 20px; */
+    }
+
+    .form input[type="submit"] {
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    .form input[type="submit"]:hover {
+        background-color: #3e8e41;
+    }
+
+    /* .inp-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    } */
+/* 
+    .inp-group>div {
+
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background-color: #fff;
+        border-radius: 3px;
+        padding: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    } */
+
+    /* .inp-group input {
+        flex: 1 1 auto;
+    } */
+
+    .delete {
+        cursor: pointer;
+        color: #ffa8a2;
+        font-size: 20px;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        font-family: Arial, sans-serif;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    .form label {
+        margin-bottom: 5px;
+    }
+
+    .form input,
+    .form textarea {
+        padding: 10px;
+        border: none;
+        border-radius: 3px;
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    .form input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        cursor: pointer;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    .form input[type="submit"]:hover {
+        background-color: #3e8e41;
+    }
+
+    /* .inp-group {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .inp-group div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    } */
+
+    .delete {
+        font-size: 20px;
+        font-weight: bold;
+        color: red;
+        cursor: pointer;
+        margin-left: 5px;
+    }
+
+    .delete:hover {
+        background-color: darkred;
+    }
+
+    .main_heading {
+        text-align: center;
+    }
+
+    hr {
+        border-top: 1px solid #ccc;
+        margin-bottom: 20px;
+    }
+
+    @media only screen and (min-width: 768px) {
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .col-md-3 {
+            width: 90%;
+        }
+    }
+
+
+    button.add {
+        background-color: #ceffd0;
+        /* set the background color */
+        color: rgb(0, 0, 0);
+        /* set the font color */
+        border: none;
+        /* remove the border */
+        padding: 5px 10px;
+        /* add padding */
+        font-size: 14px;
+        /* set the font size */
+        cursor: pointer;
+        /* change the cursor on hover */
+        transition: all 0.3s ease;
+        /* add a smooth transition effect */
+    }
+
+    button.add:hover {
+        background-color: #ffffff;
+        /* change the background color on hover */
+    }
+
+    input[type="submit"] {
+        background-color: #ceffd0;
+        /* set the background color */
+        color: rgb(0, 0, 0);
+        /* set the font color */
+        border: none;
+        /* remove the border */
+        padding: 10px 15px;
+        /* add padding */
+        font-size: 18px;
+        /* set the font size */
+        cursor: pointer;
+        /* change the cursor on hover */
+        transition: all 0.3s ease;
+        /* add a smooth transition effect */
+    }
+
+    input[type="submit"]:hover {
+        background-color: #ffffff;
+        /* change the background color on hover */
+    }
+</style>

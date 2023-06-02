@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pending Proforma</title>
+</head>
+<body>
+    
+    <h1>Pending</h1>
+    
+    
+    <% if (Array.isArray(response)) { %>
+        <% response.forEach(item=> { %>
+            <table border="">
+                <thead>
+                    <tr>
+                        <th width="300">Proforma Number</th>
+                        <th width="300">Submitted by</th>
+                        <th width="300">Particular of Equipment</th>
+                        <th width="300">Specification</th>
+                        <th width="300">Vendor 1</th>
+                        <th width="300">Vendor 2</th>
+                        <th width="300">Vendor 3</th>
+                        <th width="300">Approximate Cost</th>
+                        <th width="300">Justification for Purchase</th>
+                        <th width="300">Departmental Committee Members 1</th>
+                        <th width="300">Departmental Committee Members 2</th>
+                        <th width="300">Departmental Committee Members 3</th>
+                        <th width="300">Meeting was held on</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr align="center">
+                        <td>
+                            <%= item.id %>
+                        </td>
+                        <td>
+                            <%= item.name %>
+                        </td>
+                        <td>
+                            <%= item.equipment %>
+                        </td>
+                        <td>
+                            <%= item.specification %>
+                        </td>
+                        <td>
+                            <%= item.vendor_name %> <%= item.vendor_address %>
+                        </td>
+                        <td>
+                            <%= item.vendor_name1 %> <%= item.vendor_address1 %> 
+                        </td>
+                        <td>
+                            <%= item.vendor_name2 %> <%= item.vendor_address2 %>
+                        </td>
+                        <td>
+                            <%= item.cost %>
+                        </td>
+                        <td>
+                            <%= item.justification %>
+                        </td>
+                        <td>
+                            <%= item.member_name %>
+                        </td>
+                        <td>
+                            <%= item.member_name1 %>
+                        </td>
+                        <td>
+                            <%= item.member_name2 %>
+                        </td>
+                        <td>
+                            <%= item.meeting %>
+                        </td>
+                    </tr>
+                </tbody><br>
+                <% }) %>
+                <% }else{ %>
+                    <p>There are no Pending Slips!!!</p>
+               <% } %>
+</body>
+</html>
+

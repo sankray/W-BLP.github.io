@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pending Slips</title>
+</head>
+<body>
+    
+    <% if (Array.isArray(response)) { %>
+        <% response.forEach(item=> { %>
+            <table border="">
+                <thead>
+                    <tr>
+                        <th width="300">Slip Number</th>
+                        <th width="300">Department</th>
+                        <th width="300">Activity Details</th>
+                        <th width="300">Description</th>
+                        <th width="300">Date</th>
+                        <th width="300">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr align="center">
+                        <td>
+                            <%= item.id %>
+                        </td>
+                        <td>
+                            <%= item.department %>
+                        </td>
+                        <td>
+                            <%= item.activity_details %>
+                        </td>
+                        <td>
+                            <%= item.description %>
+                        </td>
+                        <td>
+                            <%= item.date %>
+                        </td>
+                        <td>
+                            <%= item.slip_status %>
+                        </td>
+                    </tr>
+                </tbody><br>
+                <% }) %>
+                <% }else{ %>
+                    <p>There are no Pending Slips!!!</p>
+               <% } %>
+</body>
+</html>

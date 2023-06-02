@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/pinkslip.css">
+    <title>Approval and Remark</title>
+</head>
+
+<body>
+
+    <form action="/accept-slip-request" method="post">
+        <h1>Taking action on Pink Slip</h1>
+        <hr><br>
+        <label for="id">Pink Slip No.</label>
+        <div>
+            <input type="id" name="id" class="id" id="id" placeholder="id">
+        </div><br>
+        <label for="requestType">Request type</label>
+        <div>
+            <select name="requestType" id="requestType" class="requestType">
+                <option value="accepted">Accept</option>
+                <option value="rejected">Reject</option>
+                <option value="pending">Keep Still</option>
+            </select>
+        </div><br>
+        <label for="remark">Remark</label>
+        <div>
+            <input type="text" name="remark" class="remark" id="remark" placeholder="remark">
+        </div><br>
+        <label for="accepted_by">Send remark to</label>
+        <div>
+            <input type="text" name="accepted_by" id="accepted_by">
+        </div><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remarks and Downloads</title>
+</head>
+<body>
+    <% if (Array.isArray(response)) { %>
+        <% response.forEach(item=> { %>
+            <table border="">
+                <thead>
+                    <tr>
+                        <th width="300">Slip No.</th>
+                        <th width="300">Request Answer</th>
+                        <th width="300">remark</th>
+                        <th width="300">ID</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr align="center">
+                        <td>
+                            <%= item.id%>
+                        </td>
+                        <td>
+                            <%= item.requestType%>
+                        </td>
+                        <td>
+                            <%= item.remark%>
+                        </td>
+                        <td>
+                            <%= item._id%>
+                        </td>
+                    </tr>
+                </tbody><br>
+                <% }) %>
+                <% }else{ %>
+                    <p>There are no Remarks!!!</p>
+               <% } %>
+
+
+               <form action="/remarks" method="post">
+                <label for="id">Pink Slip No.</label>
+                <div>
+                    <input type="text" name="id" class="id" id="id" placeholder="id">
+                </div><br>
+                <button>pdf</button>
+               </form>
+            </body>
+</html>

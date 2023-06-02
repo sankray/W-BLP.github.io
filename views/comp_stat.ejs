@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Comparative Statement</title>
+</head>
+
+<nav>
+   <a href="/get-all-Comp-Stats">Pending Comparative Statement</a> ||||
+<a href="/accept-Stats-request">Take action</a>
+</nav>
+
+<body>
+   <form action="comp_stat" method="post">
+      <div id="myform">
+         <h4>Comparative Statements</h4>
+         <label for="department">Department:</label>
+         <div>
+            <input type="text" id="department" name="department">
+         </div>
+         <br>
+         <label for="for">Comparative Statment for:</label>
+         <div>
+            <input type="text" id="for" name="for">
+         </div>
+         <br>
+         <label for="date">Date:</label>
+         <div>
+            <input type="date" id="date" name="date">
+         </div>
+         <br>
+         <label for="particulars">Particulars:</label>
+         <div>
+            <input type="text" id="particulars" name="particulars" placeholder="particulars">
+         </div>
+         <br>
+         <div class="form">
+            <input type="text" class="particulars1" placeholder="particulars" name="particulars1">
+         </div>
+         <br>
+         <div class="form">
+            <input type="text" class="particulars2" placeholder="particulars" name="particulars2">
+         </div>
+         <br>
+         <div class="form">
+            <input type="text" class="particulars3" placeholder="particulars" name="particulars3">
+         </div>
+
+         <div class="inp-groups">
+            <div class="particular-input">
+                <br>
+            </div>
+        </div>
+        <button id="add" class="add" value="Add" type="button" onclick="addInputs()">Add More Particulars</button>
+
+         <br>   
+         <br>
+         <label for="quantity">Quantity to be supplied:</label>
+         <div>
+            <input type="text" id="quantity" name="quantity" placeholder="quantity">
+         </div>
+         <br>
+         <div class="form">
+            <input type="text" class="quantity1" placeholder="quantity" name="quantity1">
+         </div>
+         <br>
+         <div class="form">
+            <input type="text" class="quantity2" placeholder="quantity" name="quantity2">
+         </div>
+         <br>
+         <div class="form">
+            <input type="text" class="quantity3" placeholder="quantity" name="quantity3">
+         </div>
+
+         <div class="inp-groups1">
+            <div class="quantity-input">
+                <br>
+            </div>
+        </div>
+        <button id="add" class="add" value="Add" type="button" onclick="addInput1s()">Add More Quantities</button>
+
+         <br>
+
+         <label for="vendor">Vendors:</label>
+         <div>
+            <label for="vendor">Vendor 1:</label>
+            <div class="form">
+               <input type="text" id="vendor" name="vendor" placeholder="enter name">
+               <div>
+                  <div class="form">
+                     <input type="text" class="price" placeholder="Amount" name="price">
+                  </div>
+                  <br>
+                  <div class="form">
+                     <input type="text" class="price1" placeholder="Amount" name="price1">
+                  </div>
+                  <br>
+                  <div class="form">
+                     <input type="text" class="price2" placeholder="Amount" name="price2">
+                  </div>
+                  <br>
+                  <div class="form">
+                     <input type="text" class="price3" placeholder="Amount" name="price3">
+                  </div>
+                  <div class="inp-groups2">
+                     <div class="price-input">
+                         <br>
+                     </div>
+                 </div>
+                 <button id="add" class="add" value="Add" type="button" onclick="addInput2s()">Add More</button>
+                  <br>
+               </div>
+            </div>
+
+            <label for="vendor1">Vendor 2:</label>
+            <div class="form">
+               <input type="text" class="vendor1" placeholder="enter name" name="vendor1">
+               <div>
+                  <div class="form">
+                     <input type="text" class="prices" placeholder="Amount" name="prices">
+                  </div>
+                  <br>
+                  <div class="form">
+                     <input type="text" class="prices1" placeholder="Amount" name="prices1">
+                  </div>
+                  <br>
+                  <div class="form">
+                     <input type="text" class="prices2" placeholder="Amount" name="prices2">
+                  </div>
+                  <br>
+                  <div class="form">
+                     <input type="text" class="prices3" placeholder="Amount" name="prices3">
+                  </div>
+                  <div class="inp-groups3">
+                     <div class="price1-input">
+                         <br>
+                     </div>
+                 </div>
+                 <button id="add" class="add" value="Add" type="button" onclick="addInput3s()">Add
+                     More</button>
+                  <br>
+               </div>
+            </div>
+
+            <label for="vendor2">Vendor 3:</label>
+            <div class="form">
+               <input type="text" class="vendor2" placeholder="enter name" name="vendor2">
+               <div>
+                  <div class="form">
+                     <input type="text" class="pricess" placeholder="Amount" name="pricess">
+                  </div>
+                  <br>
+                  <div class="form">
+                     <input type="text" class="pricess1" placeholder="Amount" name="pricess1">
+                  </div>
+                  <br>
+                  <div class="form">
+                     <input type="text" class="pricess2" placeholder="Amount" name="pricess2">
+                  </div>
+                  <br>
+                  <div class="form">
+                     <input type="text" class="pricess3" placeholder="Amount" name="pricess3">
+                  </div>
+                  <div class="inp-groups4">
+                     <div class="price2-input">
+                         <br>
+                     </div>
+                 </div>
+                 <button id="add" class="add" value="Add" type="button" onclick="addInput4s()">Add
+                     More</button>
+                  <br>
+               </div>
+            </div>
+
+         </div>
+
+         <label for="submitted_to">Submitted for Approval:</label>
+         <div class="form">
+             <select name="submitted_to" id="submitted_to" class="submitted_to">
+             <option value="hod@q">H.O.D</option>
+             <option value="registrar@q">Registrar</option>
+         </select>
+         </div>
+         <br>
+
+         </div>
+         <label for="email">Notify on:</label>
+         <div class="form">
+            <input placeholder="Email" id="email" type="email" name="email" class="form-control"
+               aria-describedby="emailHelp">
+         </div>
+      </div>
+      <button>submit</button>
+
+   </form>
+
+
+   <script>
+      function addInputs() {
+         const inputGroup = document.querySelector(".inp-groups");
+         const memberInput = document.createElement("div");
+         memberInput.clparticulare = "particular-input";
+
+         const nameContainer = document.createElement("div");
+         nameContainer.className = "form";
+
+         const name = document.createElement("input");
+         name.type = "text";
+         name.className = "member-name";
+         name.placeholder = "particulars";
+         name.name = "member-name";
+
+         const btn = document.createElement("a");
+         btn.className = "delete";
+         btn.innerHTML = "&times;";
+         btn.addEventListener("click", function () {
+            memberInput.remove();
+         });
+
+         nameContainer.appendChild(name);
+         memberInput.appendChild(nameContainer);
+         memberInput.appendChild(btn);
+         inputGroup.appendChild(memberInput);
+      }
+
+   </script>
+
+<script>
+   function addInput1s() {
+      const inputGroup = document.querySelector(".inp-groups1");
+      const memberInput = document.createElement("div");
+      memberInput.clparticulare = "quantity-input";
+
+      const nameContainer = document.createElement("div");
+      nameContainer.className = "form";
+
+      const name = document.createElement("input");
+      name.type = "text";
+      name.className = "member-name";
+      name.placeholder = "quantity";
+      name.name = "member-name";
+
+      const btn = document.createElement("a");
+      btn.className = "delete";
+      btn.innerHTML = "&times;";
+      btn.addEventListener("click", function () {
+         memberInput.remove();
+      });
+
+      nameContainer.appendChild(name);
+      memberInput.appendChild(nameContainer);
+      memberInput.appendChild(btn);
+      inputGroup.appendChild(memberInput);
+   }
+
+</script>
+
+<script>
+   function addInput2s() {
+      const inputGroup = document.querySelector(".inp-groups2");
+      const memberInput = document.createElement("div");
+      memberInput.clparticulare = "price-input";
+
+      const nameContainer = document.createElement("div");
+      nameContainer.className = "form";
+
+      const name = document.createElement("input");
+      name.type = "text";
+      name.className = "member-name";
+      name.placeholder = "Amount";
+      name.name = "member-name";
+
+      const btn = document.createElement("a");
+      btn.className = "delete";
+      btn.innerHTML = "&times;";
+      btn.addEventListener("click", function () {
+         memberInput.remove();
+      });
+
+      nameContainer.appendChild(name);
+      memberInput.appendChild(nameContainer);
+      memberInput.appendChild(btn);
+      inputGroup.appendChild(memberInput);
+   }
+
+</script>
+
+<script>
+   function addInput3s() {
+      const inputGroup = document.querySelector(".inp-groups3");
+      const memberInput = document.createElement("div");
+      memberInput.clparticulare = "price1-input";
+
+      const nameContainer = document.createElement("div");
+      nameContainer.className = "form";
+
+      const name = document.createElement("input");
+      name.type = "text";
+      name.className = "member-name";
+      name.placeholder = "Amount";
+      name.name = "member-name";
+
+      const btn = document.createElement("a");
+      btn.className = "delete";
+      btn.innerHTML = "&times;";
+      btn.addEventListener("click", function () {
+         memberInput.remove();
+      });
+
+      nameContainer.appendChild(name);
+      memberInput.appendChild(nameContainer);
+      memberInput.appendChild(btn);
+      inputGroup.appendChild(memberInput);
+   }
+
+</script>
+
+<script>
+   function addInput4s() {
+      const inputGroup = document.querySelector(".inp-groups4");
+      const memberInput = document.createElement("div");
+      memberInput.clparticulare = "price2-input";
+
+      const nameContainer = document.createElement("div");
+      nameContainer.className = "form";
+
+      const name = document.createElement("input");
+      name.type = "text";
+      name.className = "member-name";
+      name.placeholder = "Amount";
+      name.name = "member-name";
+
+      const btn = document.createElement("a");
+      btn.className = "delete";
+      btn.innerHTML = "&times;";
+      btn.addEventListener("click", function () {
+         memberInput.remove();
+      });
+
+      nameContainer.appendChild(name);
+      memberInput.appendChild(nameContainer);
+      memberInput.appendChild(btn);
+      inputGroup.appendChild(memberInput);
+   }
+
+</script>
+
+</body>
+</html>
+
+
+<!-- <div>
+   <center>
+      <h4>Comparative Statements Summary</b></h4>
+      <table id="tableData" border="1" cellpadding="2" name="table" class="table" id="table">
+         <tr>
+            <td><b>Sr no.</b></td>
+            <td><b>Particulars</b></td>
+            <td><b>Quantity to be supplied</b></td>
+            <td><b>Vendors</b></td>
+         </tr>
+      </table>
+   </center>
+</div> -->
+<!-- <button id="add" value="Add" onclick="addTableRow()">Add Data to Table</button>
+   <script>
+      function addTableRow() {
+         var name = document.getElementById("name");
+         var gender = document.getElementById("gender");
+         var designation = document.getElementById("designation");
+         var date = document.getElementById("date");
+         var table = document.getElementById("tableData");
+         var rowCount = table.rows.length;
+         var row = table.insertRow(rowCount);
+         row.insertCell(0).innerHTML = name.value;
+         row.insertCell(1).innerHTML = gender.value;
+         row.insertCell(2).innerHTML = designation.value;
+         row.insertCell(3).innerHTML = date.value;
+      }
+   </script>  -->

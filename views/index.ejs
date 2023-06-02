@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>W-BLP</title>
+  <link rel="stylesheet" href="/index.css">
+</head>
+<body>
+  
+  <header>
+    <h1>W-BLP</h1>
+    <h4>Web-based ledegering portal</h4>
+  </header>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Colleges</a>
+    <a href="#">Pink Slip</a>
+    <a href="#">Login/SignUp</a>
+  </nav>
+  <br>
+  
+  <section>
+  <h2>Welcome, <%= name %></h2>
+  
+  <a href="/pinkslip">Pink Slip</a>
+  
+  Accepted: <%= acceptedCount %> || Rejected: <%= rejectedCount %>  || Pending: <%= pendingCount%> || total pink slips: <%= totalCount %> | | | |
+  Accepted/Total(<%= percentAccepted %>%) 
+  <br>
+  <br>
+  <div class="progress-bar">
+    <div class="progress" style="width:<%= percentAccepted %>%;"><center>Accepted/Total</center></div>
+  </div>
+  <br>
+    <a href="/remarks">Remarks</a>
+  <br><br>
+  <hr>
+  <br>
+  
+  <a href="/proforma">Proforma</a>
+  Accepted: <%= acceptedCountP %> || Rejected: <%= rejectedCountP %>  || Pending: <%= pendingCountP%> || total pink slips: <%= totalCountP %> | | | |
+  Accepted/Total(<%= percentAcceptedP %>%) 
+  <br>
+  <br>
+  <div class="progress-bar">
+    <div class="progress" style="width:<%= percentAcceptedP %>%;"><center>Accepted/Total</center></div>
+  </div>
+  <br>
+  
+  <a href="/remarksP">Remarks</a>
+  <br><br>
+  <hr>
+  <br>
+  
+  <a href="/comp_stat">Comparative Statement</a>
+  Accepted: <%= acceptedCountC %> || Rejected: <%= rejectedCountC %>  || Pending: <%= pendingCountC%> || total pink slips: <%= totalCountC %> | | | |
+  Accepted/Total(<%= percentAcceptedC %>%) 
+  <br>
+  <br>
+  <div class="progress-bar">
+    <div class="progress" style="width:<%= percentAcceptedC %>%;"><center>Accepted/Total</center></div>
+  </div>
+  <br>
+  
+  <a href="/remarks-Stats">Remarks</a>
+  <br><br>
+  <hr>
+  <br>
+  
+  <form action="/logout?_method=DELETE" method="POST">
+    <button type="submit">Log Out</button>
+  </form>
+  <br>
+  </section>
+  
+  
+  
+  <br>
+  <br>
+  <main>
+    <section>
+  
+        <a href="#" target="_blank" rel="noopener noreferrer">YouTube</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
+  
+        <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo sit saepe in enim et inventore deleniti incidunt, officiis dicta magnam dolorum, ad corporis. Numquam accusantium quibusdam ducimus sapiente ipsam quo? </h4>
+        <h5>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum corporis sunt nisi! Corrupti provident reprehenderit a distinctio aspernatur, in nulla beatae sunt ratione est facere nobis sequi saepe, omnis vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus quos natus dolorem ducimus. Eveniet expedita dolorum possimus excepturi ea ut tempore cum aliquid tempora optio. Laborum nostrum, voluptas expedita magni similique, libero veniam neque nemo soluta aperiam eaque alias culpa officiis, dolor praesentium ut.</h5>
+    </section>
+  </main>
+  
+  <footer>
+    <a href="#">FAQ</a>
+    <a href="#">Contact Us</a>
+    <a href="#">Terms of Use</a>
+    <a href="#">Privacy Policy</a>
+    <a href="#">&copy; 2022 | W-BLP</a>
+  </footer>
+</body>
+</html>
+
+
+<style>
+  .progress-bar {
+    width: 100%;
+    background-color: #ddd;
+    height: 25px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .progress {
+    width: 0;
+    height: 100%;
+    background-color: #4CAF50;
+    border-radius: 10px;
+    transition: width 1s ease-in-out;
+  }
+
+@keyframes progress-bar {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 50%;
+  }
+}
+
+
+</style>
